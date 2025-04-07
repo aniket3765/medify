@@ -31,7 +31,7 @@ const FindDoctor = ({
       <div className="floating-form">
         <div className="input-controll select-width">
           <img src={searchgrey} alt="" srcset="" />
-          <div name="state">
+          <div id="state">
             <select
             value={selectedState}
             onChange={(e) => setSelectedState(e.target.value)}
@@ -49,7 +49,7 @@ const FindDoctor = ({
         </div>
         <div className="input-controll select-width">
           <img src={searchgrey} alt="" srcset="" />
-          <div name="city">
+          <div id="city">
              <select
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.target.value)}
