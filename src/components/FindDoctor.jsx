@@ -31,7 +31,8 @@ const FindDoctor = ({
       <div className="floating-form">
         <div className="input-controll select-width">
           <img src={searchgrey} alt="" srcset="" />
-          <select
+          <div name="state">
+            <select
             value={selectedState}
             onChange={(e) => setSelectedState(e.target.value)}
             name='state'
@@ -43,10 +44,13 @@ const FindDoctor = ({
               </option>
             ))}
           </select>
+          </div>
+          
         </div>
         <div className="input-controll select-width">
           <img src={searchgrey} alt="" srcset="" />
-          <select
+          <div name="city">
+             <select
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.target.value)}
             name="city"
@@ -58,6 +62,8 @@ const FindDoctor = ({
               </option>
             ))}
           </select>
+          </div>
+         
         </div>
         <button className="search-btn">
           <img src={searchwhite} alt="" srcset="" />
