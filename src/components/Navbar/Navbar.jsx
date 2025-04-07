@@ -1,119 +1,90 @@
-import React, { useState } from 'react';
-//styles
-import "./Navbar.css"
-//asstes
-import sheildIcon from "../../assets/sheildWhite.svg";
-import menuIcon from "../../assets/hamburger.svg";
-//components
-import Button from '../Button/Button';
-import SearchBar from '../SearchBar/SearchBar';
-import { Link } from 'react-router-dom';
+import {
+  Box,
+  Container,
+  Button,
+  List,
+  ListItem,
+  Stack,
+  Typography,
+  useMediaQuery,
+  IconButton,
+} from "@mui/material";
+import { Link } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import styles from "./NavBar.module.css";
+import { useState } from "react";
+import CloseIcon from "@mui/icons-material/Close";
+import MenuIcon from "@mui/icons-material/Menu";
 
-const Navbar = props => {
-    //props
-    const { atHomePage, atFindPage, atBookingsPage, backColor } = props;
-    //states
-    const [menuPoisition, setMenuPosition] = useState("hideMenu");
-    //variables
-    const navLinks = ["Find Doctors", "Hospitals", "Medicines", "Surgeries", "Software for Provider", "Facilities"];
-    //functions
-    const displayLinks = () => {
-        return navLinks.map(item => {
-            let goto = "#"
-            if(item == "Find Doctors") goto = "/find"
-            return (
-                <Link to={goto}>
-                    <span className='navLink'><span className='navLink-inner'>{item}</span></span>
-                </Link>
-            )
-        })
-    }
-    const handleMenuClick = () => {
-        if(menuPoisition === "menuLeft" || menuPoisition === "hideMenu") setMenuPosition("menuRight");
-        else setMenuPosition("menuLeft");
-    }
-    const displayMenuList = () => {
-        let arr = [], delay = 0, transitionDelay;
-        // ...navLinks, 
-        navLinks.forEach((item, index) => {
-            transitionDelay = {transitionDelay: `${delay++}00ms`} 
-            let goto = "#";
-            if(item == "Find Doctors") goto = "/find";
-            return arr.push(
-                <Link onClick={handleMenuClick} to={goto} style={transitionDelay} className={`menuItem ${menuPoisition}`}>
-                    {item}
-                </Link>
-            )
-        });
+export default function NavBar() {
+  const isMobile = useMediaQuery("(max-width:900px)");
+  const [menuOpen, setMenuOpen] = useState(false);
 
-        arr.push(<Link to="/bookings" style={transitionDelay} className={`menuItem ${menuPoisition} menuItem-forBookings`}><Button text="my bookings" buttonClass="largeButton "/></Link>);
+  return (
+    <header>
+      <Box p={1} bgcolor="primary.main">
+        <Typography fontSize={14} textAlign="center" color="#fff">
+          The health and well-being of our patients and their health care team
+          will always be our priority, so we follow the best practices for
+          cleanliness.
+        </Typography>
+      </Box>
 
-        return arr;
-    } 
+      <Container maxWidth="xl">
+        <Stack
+          direction="row"
+          spacing={2}
+          alignItems="center"
+          justifyContent="space-between"
+          py={2}
+        >
+          <Link to="/">
+            <img src={logo} alt="Logo" height={27} />
+          </Link>
 
-    const NavbarBottom = () => {
-        if(atHomePage) return null;
+          <Stack
+            direction={{ xs: "column", md: "row" }}
+            spacing={4}
+            alignItems={{ xs: "flex-start", md: "center" }}
+            className={[styles.navlinks, menuOpen && styles.active]}
+            pt={{ xs: 12, md: 1 }}
+            pb={{ xs: 4, md: 1 }}
+            px={{ xs: 4, md: 0 }}
+          >
+            <Link>Find Doctors</Link>
+            <Link to="/search">Hospitals</Link>
+            <Link>Medicines</Link>
+            <Link>Surgeries</Link>
+            <Link>Software for Provider</Link>
+            <Link>Facilities</Link>
+            <Link to="/my-bookings">
+              <Button variant="contained" disableElevation>
+                My Bookings
+              </Button>
+            </Link>
 
-        return (
-            <div className='navbarBottom'>
-                <span className='navbarBottomPatch'></span>
-            </div>
-        )
-    }
+            {isMobile && (
+              <IconButton
+                onClick={() => setMenuOpen(false)}
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  right: 32,
+                  color: "#fff",
+                }}
+              >
+                <CloseIcon />
+              </IconButton>
+            )}
+          </Stack>
 
-    //sub-components
-    const NavSearch = () => {
-        if(atFindPage) return (
-            <div className={"NavSearch"}>
-                <SearchBar />
-            </div>
-        )
-    }
-
-    const BookingSearch = () => {
-        if(atBookingsPage) return (
-            <div className={"BookingSearch"}>
-                <span className='bookingsHeadline'>My Bookings</span>
-                <div className='navSearchWrapper'>
-                    <SearchBar atBookingsPage={true}/>
-                </div>
-            </div>
-        )
-    }
-
-    return (
-
-        <>
-        <nav className={`${backColor}`}>
-            <div className="commonContainer">
-            <div className='mainNav'>
-                <Link to="/">
-                    <div className='logo'>
-                        <Button icon={sheildIcon} buttonClass="logoButton"/>
-                        <span className='logoText'>medify</span>
-                    </div>
-                </Link>
-                <div className='navMenuButton'>
-                    <Button clickFuntion={handleMenuClick} buttonClass='whiteButton inheritBackground' icon={menuIcon} />
-                </div>
-                <div className='navBody'>
-                    <div className='navLinksDiv'>{displayLinks()}</div>
-                    <Link to="/bookings">
-                        <Button text="my bookings" buttonClass="largeButton "/>
-                    </Link>
-                </div>
-            </div>
-            
-            <div className='menuListWrapper'>
-                {displayMenuList()}
-            </div>
-            </div>
-            <NavSearch />
-            <BookingSearch />
-        </nav>
-        <NavbarBottom />
-        </>
-    );
-};
-
-export default Navbar;
+          {isMobile && (
+            <IconButton onClick={() => setMenuOpen(true)}>
+              <MenuIcon />
+            </IconButton>
+          )}
+        </Stack>
+      </Container>
+    </header>
+  );
+}
