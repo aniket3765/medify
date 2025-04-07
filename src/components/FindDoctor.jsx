@@ -34,6 +34,7 @@ const FindDoctor = ({
           <select
             value={selectedState}
             onChange={(e) => setSelectedState(e.target.value)}
+            name='state'
           >
             <option value="">Select a state</option>
             {states.map((state) => (
@@ -48,6 +49,7 @@ const FindDoctor = ({
           <select
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.target.value)}
+            name="city"
           >
             <option value="">Select a city</option>
             {cities.map((city) => (
