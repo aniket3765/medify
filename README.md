@@ -1,143 +1,78 @@
-# MEDIFY - Medical Center Slot Booking Platform
 
-MEDIFY is a web application designed for booking appointment slots at medical centers. Built with modern web technologies, it provides a user-friendly interface for patients to book appointments and for medical centers to manage their schedules efficiently.
+# Demo
 
-## Table of Contents📚
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Screenshot](#screenshot)
-- [Getting Started](#getting-started)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+https://github.com/rajkamble21/medify/assets/70090963/3c043044-837c-4eed-8c88-60b081c63cff
 
-## Introduction🚀
 
-MEDIFY is a comprehensive platform designed to streamline the process of booking and managing medical appointments. Patients can easily find available slots, book appointments, and receive reminders. Medical centers can manage their schedules, view appointments, and update availability.
 
-## Features🛠️
+# Getting Started with Create React App
 
-- User-friendly interface for booking medical appointments
-- Real-time availability of appointment slots
-- User authentication and profile management
-- Admin panel for medical centers to manage appointments
-- Email and SMS reminders for appointments
-- Responsive design for optimal viewing on various devices
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Screenshot📷
+## Available Scripts
 
-![MEDIFY](https://github.com/BoddepallyVenkatesh06/MEDIFY-Medical-Center-Slot-Booking-Platform/blob/main/Screenshot_Medify.png)
+In the project directory, you can run:
 
-## Getting Started🎯
+### `npm start`
 
-### Prerequisites📋
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Before you begin, ensure you have the following installed on your system:
-- Node.js
-- npm (Node Package Manager)
-- Render (for backend database)
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### Installation⚙️
+### `npm test`
 
-1. Clone the repository:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-```bash
-git clone https://github.com/BoddepallyVenkatesh06/MEDIFY-Medical-Center-Slot-Booking-Platform.git
-cd medify-slot-booking
-```
+### `npm run build`
 
-2. Install frontend dependencies:
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-```bash
-cd client
-npm install
-```
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-3. Install backend dependencies:
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```bash
-cd ../server
-npm install
-```
+### `npm run eject`
 
-4. Set up environment variables:
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Create a `.env` file in the `server` directory and add the following environment variables:
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-```
-render.com
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## Flow of the Application🔧
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-![FlowChart](https://github.com/BoddepallyVenkatesh06/MEDIFY-Medical-Center-Slot-Booking-Platform/blob/main/Flowchart.png)
+## Learn More
 
-### Usage📈
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To start the development servers:
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-1. Start the backend server:
+### Code Splitting
 
-```bash
-cd server
-npm start
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-2. Start the frontend development server:
+### Analyzing the Bundle Size
 
-```bash
-cd ../client
-npm start
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-The application will be running in development mode at `http://localhost:3000`.
+### Making a Progressive Web App
 
-To build the application for production:
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-1. Build the frontend:
+### Advanced Configuration
 
-```bash
-cd client
-npm run build
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-2. Serve the built frontend with the backend server.
+### Deployment
 
-## Contributing❤️
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-Contributions are welcome! If you'd like to contribute to MEDIFY, please follow these steps:
+### `npm run build` fails to minify
 
-1. Fork the project.
-2. Create a new branch: `git checkout -b feature-name`.
-3. Commit your changes: `git commit -m 'Add some feature'`.
-4. Push to the branch: `git push origin feature-name`.
-5. Submit a pull request.
-
-## License📝
-
-```
-MIT License
-
-Copyright (c) 2024 Venky Kumar
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
