@@ -29,13 +29,12 @@ const FindDoctor = ({
       <div className="blueSection"></div>
 
       <div className="floating-form">
-        <div className="input-controll select-width">
+        <div id="state"   className="input-controll select-width">
           <img src={searchgrey} alt="" srcset="" />
-          <div id="state">
+          <div >
             <select
             value={selectedState}
             onChange={(e) => setSelectedState(e.target.value)}
-            name='state'
           >
             <option value="">Select a state</option>
             {states.map((state) => (
@@ -47,13 +46,12 @@ const FindDoctor = ({
           </div>
           
         </div>
-        <div className="input-controll select-width">
+        <div id="city" className="input-controll select-width">
           <img src={searchgrey} alt="" srcset="" />
-          <div id="city">
+          <div >
              <select
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.target.value)}
-            name="city"
           >
             <option value="">Select a city</option>
             {cities.map((city) => (
