@@ -153,7 +153,7 @@ function App() {
   }, [selectedState]);
 
   useEffect(() => {
-    const fetchMedicalCenters = async () => {
+    const getHospitals = async () => {
       if (selectedState || selectedCity) {
         try {
           const response = await axios.get(
@@ -167,7 +167,7 @@ function App() {
       }
     };
 
-    fetchMedicalCenters();
+    getHospitals();
   }, [selectedCity]);
 
   return (
